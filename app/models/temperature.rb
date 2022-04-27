@@ -3,6 +3,8 @@ class Temperature < ApplicationRecord
 
   before_create :rm_offset_value
 
+  after_save :verify_for_alert
+
   default_scope { order(created_at: :desc) }
 
   scope :since, ->(date) {
@@ -20,5 +22,9 @@ class Temperature < ApplicationRecord
   def rm_offset_value
     offset_value = SystemConfig['offset_value'].to_f
     self.value -= offset_value
+  end
+
+  def verify_for_alert
+    VerifyAlert.call
   end
 end

@@ -11,6 +11,6 @@ class TemperatureMailer < MandrillMailer::MessageMailer
       important: true,
       inline_css: true,
     }
-    mandrill_mail 
+    mandrill_mail email_info
   end
 end

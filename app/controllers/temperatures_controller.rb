@@ -1,7 +1,11 @@
 class TemperaturesController < ApplicationController
   def set_offset
-    SystemConfig['offset'] = offset_value[:value]
-    render status: 200
+    if offset_value[:value].present?
+      SystemConfig['offset'] = offset_value[:value]
+      render status: 200
+    else
+      render json: {value: ["can't be blank"]}, status: 400
+    end
   end
 
   def create_temperature

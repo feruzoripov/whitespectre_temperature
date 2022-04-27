@@ -59,3 +59,5 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
   config.mandrill_mailer.default_url_options = { host: 'localhost' }
 end
+
+ENV['MANDRILL_API_KEY'] = 'MANDRILL_API_KEY'

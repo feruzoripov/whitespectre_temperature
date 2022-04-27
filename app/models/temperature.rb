@@ -9,12 +9,12 @@ class Temperature < ApplicationRecord
 
   scope :since, ->(date) {
     return self unless date.present?
-    where('created_at >= ?' , date.to_date)
+    where('created_at >= ?' , date.to_date.beginning_of_day)
   }
 
   scope :till, ->(date) {
     return self unless date.present?
-    where('created_at <= ?', date.to_date)
+    where('created_at <= ?', date.to_date.end_of_day)
   }
 
   private

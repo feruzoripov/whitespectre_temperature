@@ -1,6 +1,6 @@
 class VerifyAlert
   LIMIT_TEMPERATURE = SystemConfig['limit_temperature'] || 37.5
-  EMAIL = SystemConfig['user_email'] || 'test@example.com'
+  EMAIL = 'test@example.com'
 
   def self.call
     tmp = Temperature.first(5).sum(&:value)

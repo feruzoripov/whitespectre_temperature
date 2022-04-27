@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_04_27_174841) do
   end
 
   create_table "temperatures", force: :cascade do |t|
-    t.decimal "temp", precision: 2, scale: 2
+    t.decimal "value", precision: 2, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

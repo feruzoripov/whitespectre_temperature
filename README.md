@@ -12,14 +12,14 @@ This application uses Rails version 6.1.5, Ruby version 2.7.2.
 
 This application contains following endpoints:
 
-`/list` - to get list historical data readings
-`/temperature` - to store temperature readings for a user
-`/offset` - to set offset
+ - `/list` - to get list historical data readings
+ - `/temperature` - to store temperature readings for a user
+ - `/offset` - to set offset
 
 There are two models:
 
-`Temperature` - to store temperature readings for a user
-`SystemConfig` - to store configs that can be changed: offset and etc.
+ - `Temperature` - to store temperature readings for a user
+ - `SystemConfig` - to store configs that can be changed: offset and etc.
 
 The application uses Mandrill for sending e-mail, in order to use the functionality Mandrill API key needs to be stored in `ENV`
 
@@ -34,9 +34,9 @@ The application uses Mandrill for sending e-mail, in order to use the functional
 
 ### List historical data readings
 
-To get list: `GET localhost:3000/list`
-Date range can be passed with following params: `since:date` `till:date`
-Example: `GET localhost:3000/list?since=2022-01-01&till=2022-05-05`
+- To get list: `GET localhost:3000/list`
+- Date range can be passed with following params: `since:date` `till:date`
+- Example: `GET localhost:3000/list?since=2022-01-01&till=2022-05-05`
 
 ### Store temperature readings for a user
 
